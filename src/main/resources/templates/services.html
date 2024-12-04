@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1 style="text-align: center;">This is my services page</h1>
+<hr>
+<!-- use fragment -->
+<!--<div class="host-tag" th:replace="~{base :: parent('1. User Management Service')}"></div>-->
+<!--<div th:replace="~{base :: parent(~{::section})}">-->
+
+<!--using id: if we have multiple same tag we can passed it by using id-->
+<!--<div th:replace="~{base :: parent(~{:: #second_content})}">-->
+
+<!--using class-->
+<div th:replace="~{base :: parent(~{:: .third_content})}">
+    <section>
+        <p><b>This is my dynamic services passed to parent base.</b></p>
+    </section>
+
+    <section id="second_content">
+        <h3>This is my second content ,we passed it by using id</h3>
+    </section>
+
+    <section class="third_content">
+        <h3>This is my third content , we passed it by using class</h3>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h1 style="text-align: center;">This is my about page</h1>
+<hr>
+<!-- use fragment -->
+<!--<div class="host-tag" th:insert="~{base :: parent}"></div>-->
+<!--<div class="host-tag" th:replace="~{base :: parent('Nandini Kukreti')}"></div>-->
+
+<!--by passing html markup -->
+<!--<div class="host-tag" th:replace="~{base :: parent(~{::section})}">-->
+
+<div class="host-tag" th:replace="${isActive} ? ~{base :: parent(~{::section})} : ~{base :: test(~{:: #not_active})}">
+<section>
+    <h1>User is active</h1>
+    <h2>This is my  dynamic about page passed to parent base.</h2>
+    <p>By using html markup we are passing the section tag in replace fragment.</p>
+    <button>click</button>
+</section>
+
+    <section id="not_active">
+        <h2>user is not active.</h2>
+    </section>
+
+</div>
+
+
+
+</body>
+</html>

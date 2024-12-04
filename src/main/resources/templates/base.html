@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fragment</title>
+</head>
+<body>
+
+<!-- create fragment -->
+  <div class="parent-fragment" th:fragment="parent(content)">
+
+  <h1><u>This is my parent Fragment:</u></h1>
+  <p>In Thymeleaf, a fragment is a reusable piece of code (like a template partial) that can be included
+    in different parts of your HTML. This is especially useful for maintaining a consistent layout, such
+    as headers, footers, and navigation bars, across multiple pages of a web application.
+    <br><br>
+
+    Why Use Fragments?
+    <br><br>
+    1- Reusability: Avoid repeating the same code in multiple files.
+    <br><br>
+    2- Maintainability: Centralized updates—change the fragment once, and it updates everywhere.
+    <br><br>
+    3- Modularity: Breaks your template into smaller, manageable pieces.
+  </p>
+
+    <div th:replace="${content}"></div>
+    <!--  <h3>value of X: <span th:text="${x}"></span></h3>-->
+</div>
+
+<!--created test fragment-->
+<div th:fragment="test(content)">
+
+  <div th:replace="${content}"></div>
+
+</div>
+
+</body>
+</html>
